@@ -13,22 +13,27 @@ class LinkedList(object):
     def __init__(self) -> None:
         self.head = None
 #図では今３つデータが入っているけど、selfのHEAD以外何もない状態だと考える。
-# appendは末尾から入れにいく
+# appendは末尾から入れにいくN
     def append(self, data: Any) -> None:
+        #　data: Any はどんな型を入れてもいいですよ(型宣言)。
+        #　selfは引数を取るということ？？？？？
         # 上で作ったNode classにdataを入れる。よってdataとnextというオブジェクトがnew_nodeにできる。
-        #new_nodeにNpde(data)を入力する。
+        #new_nodeにNode(data)を入力する。
         new_node = Node(data)
         # ⇓headに何も入っていない時
         if self.head is None:
             self.head = new_node
             return
+        # 一回目はdata1, next[]ができてreturn24で終了    
         # ??最後までリンクしても最初のself.headしかないよって意味かな???
-        #
+        #　2回目はself.headにdata1.next[]があるからif文はskipする。
         last_node =self.head
+        # この時点でノードのリストに入ったと言えるの？？？
         # 末尾を探しにいく。
         # whileはtrueの間だけ繰り返す。
         while last_node.next:
             last_node = last_node.next
+        #　初回whileはfalseだからskip。    
         last_node.next = new_node
 
     def insert(self, data: Any) -> None:
