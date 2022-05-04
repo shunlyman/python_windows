@@ -15,8 +15,8 @@ class LinkedList(object):
 #図では今３つデータが入っているけど、selfのHEAD以外何もない状態だと考える。
 # appendは末尾から入れにいくN
     def append(self, data: Any) -> None:
-        #　data: Any はどんな型を入れてもいいですよ(型宣言)。
-        #　selfは引数を取るということ？？？？？
+        #　data: Any はどんなクラスのオブジェクトを入れてもいいですよ。
+        
         # 上で作ったNode classにdataを入れる。よってdataとnextというオブジェクトがnew_nodeにできる。
         #new_nodeにNode(data)を入力する。
         new_node = Node(data)
@@ -71,6 +71,7 @@ if __name__ == '__main__':
     l.append(1)
     l.append(2)
     l.append(3)
+    l.append(4)
     l.insert("最初")
     l.print()
     l.remove(2)
